@@ -1,0 +1,169 @@
+1.程序运行：交互式，文件式
+
+2.编程方法：输入(input)，处理(process)，输出(output)
+
+3.程序设计语言即计算机指令；计算机程序即按规则组织起来的一组计算
+机指令；根据执行机制可分为静态语言和脚本语言。python是脚本语言。
+
+4.python具有通用性，有33个保留字，语法简洁。
+
+5.基本语法元素：程序格式框架、缩进、注释、变量、命名、保留字、
+数据类型、赋值语句、引用。
+
+	5.1.采用严格的缩进表示格式框架；缩进表示代码之间的包含和层次关系；
+	缩进是python中表明程序框架的唯一手段。
+
+	5.2.变量：用来存储数据的空间，它的值是可变的。
+
+	5.3.python允许采用大小写字母、数字、下划线、汉字组合命名；大小写
+	敏感；但首字母不能是数字；中间不能出现空格；保留字不能为变量。
+
+6.基本输入输出函数：input()、eval()、print()
+	
+	eval(input("提示")) -> eval会获取int类型。
+	eval("hello")与eval("'hello'")得到的结果不同。
+	
+	print中end为增加输出结尾。
+
+7.二进制0b，八进制0o，十进制D，十六进0x
+
+	7.1.十进制转换为其它进制：bin(12),oct(12),hex(12)
+	
+	7.2.其它进制转换为十进制：
+		①int('10010110',2);int('200',8);int('60',16)
+		②'{:d}'.format(0b10110110);'{:d}'.format(0o200);'{:d}'.format(0x60)
+		③eval('0b10110110');eval('0o200');eval('0x60')
+
+8.科学记数法(e)
+	123.67表示为1.2367e2	0.0023表示为2.3e-3
+
+9.复数表示为x+yj，前面为实数(real)，后面为虚数(imag)。
+	a=123-12j	
+		print("复数的实数部分",a.real)	->(123.0)  ->(-12)
+	
+10.x/y得到的是浮点数；x//y得到的是整数；x**y指x的y次幂。
+	
+11.数学函数
+	abs(x)--求绝对值；divmod(x,y)--输出元组(x//y,x%y);
+	pow(x,y[,z])--求(x**y)%z的值，省略后求次方的值；
+	round(x[,ndigits])--对x进行四舍五入，保留ndigits位小数；
+
+12.格式化输出（a = "你好"）
+	print("{:8}".format(a);		print("{:>8}".format(a))
+	print("{:*^8}".format(a))	  居中对齐，不足处使用*填充
+	print("{:.2}".format(12.34))	保留两位小数的科学计数法
+	print(":.2f".format(1.234))   保留两位小数
+	print("{0:b}".format(19))	转换为二进制(bin,oct,hex)
+	print("{0:c}".format(33))	  转换为Unicode编码
+	
+13.字符处理函数
+	chr(x)  返回Unicode编码x对应的单字符；
+	ord(x)	返回单字符x表示的Unicode编码；
+	split()分割；upper()大写；lower()小写；replace()替换；
+	str.strip(del)	从str字符中去掉左右侧的del中的字符；
+	iter.join(str)	将iter添加到str每个字符中；
+	str.count(sub)	返回str中sub字符串出现的次数；
+	str.center(width,fullchar)  将str居中放置在width的长度中，
+		fillchar表示填充字符,也可以使用char(12288)及各种编码格式；
+	
+14.for循环输出，每行出现一个元素，可以使用end控制一行输出。
+
+15.函数
+	函数定义中可以对参数指定类型：*表示列表，**表示字典。
+	函数中可以有多个return语句；return不是函数必须使用的保留字；
+	
+16.组合数据：
+	常用有三大类：集合类型，序列类型，映射类型。
+	集合类型是一个具体的数据类型名称，而序列和映射是一类数据类型的总称。
+	
+	集合类型set{}是一个元素集合，，无序，元素是唯一存在的。
+		元素只能是固定数据类型，例整数、浮点、字符串。
+		交集&，并集|，差集-，补集^
+	
+	序列类型是一个元素向量，存在先后关系，元素没有排他性。
+		典型代表是字符串类型str""和列表类型list[]。（del a[2:]）
+	
+	映射类型是 键-值 的组合，典型代表是字典类型dict{'':''}。
+		键值对之间没有顺序，且不能重复。
+	
+17.文件的操作
+	b表示二进制模式，w覆盖的写模式，r制度模式，a追加模式
+	
+18.os模块
+	os.getcwd()		os.chdir("d:\\")
+	
+19.有68个内置函数
+	abs()---绝对值或复数的模
+	all([34>14,36<67])---且，都为真时返回true
+	any([34>14,36<67])---或，有一个真时返回true
+	complex()---关于的复数
+	divmod(a,b)---返回(商,余数)
+	sorted([1,2,3])---排序
+	
+20.turtle库
+	turtle.setup(width,height,startx,starty)
+	pendown()拿起画笔   pendup()放下画笔  pencolor("")笔色
+	begin_fill()填充前调用  end_fill()填充后调用
+	filling()返回填充状态	fillcolor("red")填充色
+	circle(r,e)半径为r，角度为e的圆或弧形
+	dot(r,colort)半径为r，颜色为color的圆点
+	hideturtle()隐藏画笔
+	
+21.random库
+	seed()	种子，默认为当前系统时间
+		random()  生成一个[0.0,1.0]之间的随机小数 
+		uniform(a,b)	生成一个[a,b]之间的随机小数
+	randrange(start,stop[,step])	生成一个[start,stop)之间的随机整数
+	randint(a,b)	生成一个[a,b]之间的整数
+		choice()		从序列中随机返回一个元素
+		shuffle()		将序列随机排序
+		sample(pop,k)	从pop类型中随机选取k个元素，以列表返回
+	
+22.time库
+	time.gmtime()  time.localtime()  获取分点时间
+	time.time()获取当前时间戳	 time.ctime()获取可读时间
+	time.strftime()时间戳转时间   time.strptime()时间转时间戳
+	 
+23.PyInstaller库
+	直接在命令行运行，不用进入python交互式。
+	PyInstaller -i <图标文件名.ico> -F <源文件名.py>
+	完成后同级目录中生成有dist文件夹，其中即为exe可执行文件。
+
+24.jieba库与中文分词	
+	jieba.lcut("中华人民共和国")
+	jieba.lcut("中华人民共和国",cut_all=True)  分的更细些
+	jieba.add_word("韩先森")  添加到词库中
+	
+25.wordcloud库与可视化词云
+	from wordcloud import WordCloud
+	word = WordCloud(font_path="字体.ttc").generate(txt文档)
+	word.to_file("result.png")
+	
+	from scipy.misc import imread
+	mask = imread("背景图片.png")
+	word = WordCloud(width=800,height=600,maxwords=200,
+			background_color="white",max_font_size=80,
+			mask=mask,stopwords=排除的词语列表).generate(txt文档)
+	word.to_file("result.png")
+	
+26.例如
+	import jieba
+	f = open("红楼梦.txt","r",enconding="utf-8")
+	txt = f.read()
+	f.close()
+	words = jieba.lcut(txt)
+	delete = ["老太太","两个","奶奶","听见","只见","姑娘"]
+	counts = {}
+	for word in words:
+		if len(word) == 1:
+			continue
+		else:
+			counts[word] = counts.get(word,0)+1
+	for word in delete:
+		del(counts[word])
+	items = list(counts.items())
+	items.sort(lambda s:s[1], reverse=True)
+	for i in range(15):
+		word,num = item[i]
+		print("{0:<10}{1:>8}".format(word,num))
+			
